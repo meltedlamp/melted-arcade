@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guess the Number — Melted Arcade of DOOM</title>
+  <meta name="description" content="Draw 0 to 12. Reed looks. Reed does not see it.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="guess" data-game="guess">
+  <header>
+    <a class="back" href="./">Arcade</a>
+    <p class="kicker">04 · Guess the Number</p>
+    <h1>Reed does not see what you drew.</h1>
+  </header>
+
+  <main class="sheet">
+    <section class="record" aria-label="Highest score">
+      <p class="kicker">Highest score</p>
+      <p class="score" id="score">0</p>
+      <p class="score-note" id="score-note">Reed has not been right in this browser yet.</p>
+    </section>
+
+    <p class="doom">One number on the sheet, from 0 to 12. Reed reads it with a network of its own and says what it thinks. Mark it right and the tally moves. Mark it wrong and you teach it, and the next drawing is still a stranger. A scribble, a letter, a tap, or anything past 12 comes back as out of context. That is most of what a hand makes.</p>
+
+    <ol class="levels">
+      <li><strong>0 through 9</strong> One digit. Clear handwriting sometimes lands. Yours will not stay clear.</li>
+      <li><strong>10, 11, and 12</strong> Both digits in that one drawing. Reed was not built to be generous about it.</li>
+      <li><strong>Out of context</strong> The honest answer for a letter, a scrawl, or a number the sheet was never meant to hold. Reed will use it often.</li>
+    </ol>
+
+    <a class="go" href="https://meltedlamp.github.io/guess-the-number/">Play anyway</a>
+  </main>
+  <script src="scores.js"></script>
+</body>
+</html>

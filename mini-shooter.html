@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Shooter — Melted Arcade of DOOM</title>
+  <meta name="description" content="Waves that do not end, and a score that is only how long you lasted.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="shooter" data-game="shooter">
+  <header>
+    <a class="back" href="./">Arcade</a>
+    <p class="kicker">02 · Mini Shooter</p>
+    <h1>The waves do not have a last one.</h1>
+  </header>
+
+  <main class="sheet">
+    <section class="record" aria-label="Highest score">
+      <p class="kicker">Highest score</p>
+      <p class="score" id="score">0</p>
+      <p class="score-note" id="score-note">No score in this browser yet. The next wave will not wait.</p>
+    </section>
+
+    <p class="doom">Aim with the mouse. Clear a wave. The next one brings more grunts, then shooters, then a brute that draws a line and charges. Five hearts. There is no ending where you win. The number above is only how long you lasted.</p>
+
+    <ol class="levels">
+      <li><strong>Deduction</strong> Crates and a clear floor. Four bosses sleep in the corners: Witness, Verdict, Alibi, Clue. Walk into one and the trial starts. Beating it does not end the run.</li>
+      <li><strong>Kiln</strong> Lava burns where you stand, and the waves come heavier. Cinder, Forge, Ash, and Coal are already in the corners.</li>
+      <li><strong>Veil</strong> Mist slows your steps. Shooters hang back and fire. Whisper, Shade, Hush, and Gloom wake if you get close enough to regret it.</li>
+    </ol>
+
+    <a class="go" href="https://meltedlamp.github.io/mini-shooter/">Play anyway</a>
+  </main>
+  <script src="scores.js"></script>
+</body>
+</html>

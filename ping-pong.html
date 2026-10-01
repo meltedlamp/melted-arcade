@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ping Pong — Melted Arcade of DOOM</title>
+  <meta name="description" content="Three agents. ACE reads the bounce. You will not.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pong" data-game="pong">
+  <header>
+    <a class="back" href="./">Arcade</a>
+    <p class="kicker">03 · Ping Pong</p>
+    <h1>ACE already read the bounce.</h1>
+  </header>
+
+  <main class="sheet">
+    <section class="record" aria-label="Highest score">
+      <p class="kicker">Highest score</p>
+      <p class="score" id="score">0</p>
+      <p class="score-note" id="score-note">No rally in this browser yet. ACE is fine with that.</p>
+    </section>
+
+    <p class="doom">You play the near side. The ball has to land on the far half. First to 11, and you have to win by 2. The shadow on the felt is the read. ACE uses it. You watch the white ball and hope. Each clean hit comes back faster, which helps ACE more than it helps you.</p>
+
+    <ol class="levels">
+      <li><strong>Warmup</strong> It chases the ball late. A wide angle gets through. This is the only kindness, and it is the one you will leave.</li>
+      <li><strong>Match</strong> It reads the bounce, then corrects as the ball crosses the net. The pace has to be high before a change of direction lands. It usually is not high enough.</li>
+      <li><strong>Agent</strong> It calls the landing early. Pull it wide, then hit behind it. It is already standing there.</li>
+    </ol>
+
+    <a class="go" href="https://meltedlamp.github.io/ping-pong/">Play anyway</a>
+  </main>
+  <script src="scores.js"></script>
+</body>
+</html>
