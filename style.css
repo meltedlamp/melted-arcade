@@ -1,0 +1,200 @@
+:root {
+  --ink: #07080c;
+  --paper: #f3efe6;
+  --muted: #9aa0ae;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1200px 420px at 50% -10%, #1a1424 0%, transparent 60%),
+    var(--ink);
+  color: var(--paper);
+  font-family: "Segoe UI", sans-serif;
+}
+
+header {
+  padding: 28px 7vw 18px;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.game {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+  min-height: 128px;
+  padding: 22px 7vw;
+  color: inherit;
+  text-decoration: none;
+  border-top: 1px solid rgba(243, 239, 230, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.game::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8px;
+  background: var(--accent);
+}
+
+.game::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--wash), transparent 55%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.mark,
+.copy,
+.play {
+  position: relative;
+  z-index: 1;
+}
+
+.mark {
+  width: 64px;
+  height: 64px;
+  color: var(--accent);
+}
+
+.mark svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.index {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+}
+
+.name {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.line {
+  max-width: 38rem;
+  color: #d5d0c6;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.play {
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--play-ink);
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.game:hover .play,
+.game:focus-visible .play {
+  transform: translateX(4px);
+}
+
+.game:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: -6px;
+}
+
+.moon {
+  --accent: #e23b32;
+  --wash: rgba(120, 18, 22, 0.55);
+  --play-ink: #1a0608;
+}
+
+.shooter {
+  --accent: #ffba54;
+  --wash: rgba(120, 72, 18, 0.42);
+  --play-ink: #1a1006;
+}
+
+.pong {
+  --accent: #1cbe8c;
+  --wash: rgba(12, 90, 64, 0.55);
+  --play-ink: #04140e;
+}
+
+.guess {
+  --accent: #f4efe4;
+  --wash: rgba(90, 70, 40, 0.38);
+  --play-ink: #1a140c;
+}
+
+@media (max-width: 720px) {
+  header { padding: 16px 20px 8px; }
+
+  h1 { font-size: 34px; }
+
+  .game {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "mark copy"
+      "play play";
+    gap: 8px 14px;
+    min-height: 0;
+    padding: 14px 18px 14px 24px;
+  }
+
+  .mark { grid-area: mark; width: 44px; height: 44px; }
+  .copy { grid-area: copy; }
+  .name { font-size: 24px; }
+  .line { font-size: 15px; }
+  .play {
+    grid-area: play;
+    justify-self: start;
+    padding: 9px 20px;
+  }
+}
