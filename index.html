@@ -8,9 +8,12 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
   <header>
-    <p class="kicker">Four games. Pick one.</p>
+    <div class="top">
+      <p class="kicker">Four games. Pick one.</p>
+      <p class="who" id="who"></p>
+    </div>
     <h1>Melted Arcade of DOOM</h1>
   </header>
 
@@ -27,6 +30,7 @@
         <span class="index">01</span>
         <span class="name">The Red Moon</span>
         <span class="line">A white cat crosses haunted hills while a blood-red moon watches.</span>
+        <span class="holder" data-holder="moon"></span>
       </span>
       <span class="play">Play</span>
     </a>
@@ -43,6 +47,7 @@
         <span class="index">02</span>
         <span class="name">Mini Shooter</span>
         <span class="line">Aim with the mouse and clear waves in a small arena.</span>
+        <span class="holder" data-holder="shooter"></span>
       </span>
       <span class="play">Play</span>
     </a>
@@ -59,6 +64,7 @@
         <span class="index">03</span>
         <span class="name">Ping Pong</span>
         <span class="line">You play the near side. ACE reads the bounce.</span>
+        <span class="holder" data-holder="pong"></span>
       </span>
       <span class="play">Play</span>
     </a>
@@ -74,9 +80,12 @@
         <span class="index">04</span>
         <span class="name">Guess the Number</span>
         <span class="line">Draw a number from 0 to 12. Reed says what it sees.</span>
+        <span class="holder" data-holder="guess"></span>
       </span>
       <span class="play">Play</span>
     </a>
   </main>
+  <script src="accounts.js"></script>
+  <script src="scores.js"></script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in — Melted Arcade of DOOM</title>
+  <meta name="description" content="A name for your scores. A password if someone already took it.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="account">
+  <header>
+    <a class="back" href="./">Arcade</a>
+    <p class="kicker">Player</p>
+    <h1 id="account-title">Type a name.</h1>
+  </header>
+
+  <main class="sheet">
+    <p class="session" id="session" hidden>
+      Playing as <strong></strong>.
+      <button class="linkish" id="logout" type="button">Log out</button>
+    </p>
+
+    <form id="name-form">
+      <label class="field">
+        <span>Username</span>
+        <input id="username" name="username" autocomplete="username" maxlength="16" required>
+      </label>
+      <button class="go" type="submit">Continue</button>
+    </form>
+
+    <form id="pass-form" hidden>
+      <p class="doom" id="pass-note"></p>
+      <label class="field">
+        <span>Password</span>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <label class="field" id="confirm-label">
+        <span>Confirm password</span>
+        <input id="confirm" name="confirm" type="password" autocomplete="new-password">
+      </label>
+      <button class="go" id="pass-submit" type="submit">Log in</button>
+      <button class="linkish" id="back-name" type="button">Different name</button>
+    </form>
+
+    <p class="form-error" id="form-error" role="alert"></p>
+    <p class="score-note">Names and scores stay in this browser. Each game keeps a scoreboard of everyone who has played here.</p>
+  </main>
+  <script src="accounts.js"></script>
+  <script src="scores.js"></script>
+</body>
+</html>

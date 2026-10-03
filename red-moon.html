@@ -10,16 +10,29 @@
 </head>
 <body class="moon" data-game="moon">
   <header>
-    <a class="back" href="./">Arcade</a>
+    <div class="top">
+      <a class="back" href="./">Arcade</a>
+      <p class="who" id="who"></p>
+    </div>
     <p class="kicker">01 · The Red Moon</p>
     <h1>Eight hills. None of them are yours.</h1>
   </header>
 
   <main class="sheet">
-    <section class="record" aria-label="Highest score">
-      <p class="kicker">Highest score</p>
+    <section class="record" aria-label="Your best">
+      <p class="kicker">Your best</p>
       <p class="score" id="score">0</p>
-      <p class="score-note" id="score-note">No score in this browser yet. The Moon can wait.</p>
+      <p class="score-note" id="score-note">Nothing on your name yet. Play, then come back.</p>
+    </section>
+
+    <section class="record" aria-label="Your scores">
+      <p class="kicker">Your scores</p>
+      <ol class="log" id="history"></ol>
+    </section>
+
+    <section class="record" aria-label="Scoreboard">
+      <p class="kicker">Scoreboard</p>
+      <ol class="board" id="board"></ol>
     </section>
 
     <p class="doom">A white cat walks. A blood-red moon watches from the sky, laughs when you die, and grows a little every time you do. Five lives. Then the hill starts over. The last room is the moon itself, and it is not interested in losing.</p>
@@ -37,6 +50,7 @@
 
     <a class="go" href="https://meltedlamp.github.io/red-moon/">Play anyway</a>
   </main>
+  <script src="accounts.js"></script>
   <script src="scores.js"></script>
 </body>
 </html>

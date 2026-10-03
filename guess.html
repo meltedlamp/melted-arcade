@@ -10,16 +10,29 @@
 </head>
 <body class="guess" data-game="guess">
   <header>
-    <a class="back" href="./">Arcade</a>
+    <div class="top">
+      <a class="back" href="./">Arcade</a>
+      <p class="who" id="who"></p>
+    </div>
     <p class="kicker">04 · Guess the Number</p>
     <h1>Reed does not see what you drew.</h1>
   </header>
 
   <main class="sheet">
-    <section class="record" aria-label="Highest score">
-      <p class="kicker">Highest score</p>
+    <section class="record" aria-label="Your best">
+      <p class="kicker">Your best</p>
       <p class="score" id="score">0</p>
-      <p class="score-note" id="score-note">Reed has not been right in this browser yet.</p>
+      <p class="score-note" id="score-note">Reed has not been right for you yet.</p>
+    </section>
+
+    <section class="record" aria-label="Your scores">
+      <p class="kicker">Your scores</p>
+      <ol class="log" id="history"></ol>
+    </section>
+
+    <section class="record" aria-label="Scoreboard">
+      <p class="kicker">Scoreboard</p>
+      <ol class="board" id="board"></ol>
     </section>
 
     <p class="doom">One number on the sheet, from 0 to 12. Reed reads it with a network of its own and says what it thinks. Mark it right and the tally moves. Mark it wrong and you teach it, and the next drawing is still a stranger. A scribble, a letter, a tap, or anything past 12 comes back as out of context. That is most of what a hand makes.</p>
@@ -32,6 +45,7 @@
 
     <a class="go" href="https://meltedlamp.github.io/guess-the-number/">Play anyway</a>
   </main>
+  <script src="accounts.js"></script>
   <script src="scores.js"></script>
 </body>
 </html>

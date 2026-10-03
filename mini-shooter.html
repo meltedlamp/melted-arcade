@@ -10,16 +10,29 @@
 </head>
 <body class="shooter" data-game="shooter">
   <header>
-    <a class="back" href="./">Arcade</a>
+    <div class="top">
+      <a class="back" href="./">Arcade</a>
+      <p class="who" id="who"></p>
+    </div>
     <p class="kicker">02 · Mini Shooter</p>
     <h1>The waves do not have a last one.</h1>
   </header>
 
   <main class="sheet">
-    <section class="record" aria-label="Highest score">
-      <p class="kicker">Highest score</p>
+    <section class="record" aria-label="Your best">
+      <p class="kicker">Your best</p>
       <p class="score" id="score">0</p>
-      <p class="score-note" id="score-note">No score in this browser yet. The next wave will not wait.</p>
+      <p class="score-note" id="score-note">Nothing on your name yet. The next wave will not wait.</p>
+    </section>
+
+    <section class="record" aria-label="Your scores">
+      <p class="kicker">Your scores</p>
+      <ol class="log" id="history"></ol>
+    </section>
+
+    <section class="record" aria-label="Scoreboard">
+      <p class="kicker">Scoreboard</p>
+      <ol class="board" id="board"></ol>
     </section>
 
     <p class="doom">Aim with the mouse. Clear a wave. The next one brings more grunts, then shooters, then a brute that draws a line and charges. Five hearts. There is no ending where you win. The number above is only how long you lasted.</p>
@@ -32,6 +45,7 @@
 
     <a class="go" href="https://meltedlamp.github.io/mini-shooter/">Play anyway</a>
   </main>
+  <script src="accounts.js"></script>
   <script src="scores.js"></script>
 </body>
 </html>
