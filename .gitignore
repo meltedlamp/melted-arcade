@@ -1,2 +1,4 @@
 .DS_Store
 Thumbs.db
+arcade.db
+__pycache__/

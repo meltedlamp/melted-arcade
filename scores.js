@@ -1,11 +1,13 @@
 /* Fills the signed-in name, each player's marks, and the scoreboard. */
 
-claimMarks();
-
 function renderWho() {
   const slot = document.getElementById("who");
   if (!slot) return;
   const user = currentUser();
+  if (arcadeState.offline) {
+    slot.textContent = "Database offline";
+    return;
+  }
   if (!user) {
     slot.innerHTML = '<a href="account.html">Sign in</a>';
     return;
@@ -110,7 +112,7 @@ function bootAccount() {
     session.querySelector("strong").textContent = user.name;
   }
 
-  nameForm.addEventListener("submit", (event) => {
+  nameForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     showError("");
     const problem = nameProblem(username.value);
@@ -119,7 +121,11 @@ function bootAccount() {
       return;
     }
     const key = nameKey(username.value);
-    const existing = findUser(key);
+    const existing = await findUser(key);
+    if (existing && existing.error) {
+      showError(existing.error);
+      return;
+    }
     mode = existing ? "login" : "create";
     nameForm.hidden = true;
     passForm.hidden = false;
@@ -154,10 +160,6 @@ function bootAccount() {
     showError("");
     passSubmit.disabled = true;
     try {
-      if (!crypto.subtle) {
-        showError("This browser cannot keep a password.");
-        return;
-      }
       let result;
       if (mode === "create") {
         if (password.value !== confirm.value) {
@@ -180,8 +182,8 @@ function bootAccount() {
     }
   });
 
-  logout.addEventListener("click", () => {
-    logoutAccount();
+  logout.addEventListener("click", async () => {
+    await logoutAccount();
     showSession();
     showError("");
   });
@@ -189,8 +191,12 @@ function bootAccount() {
   showSession();
 }
 
-renderWho();
-renderHolders();
+async function startArcade() {
+  await claimMarks();
+  renderWho();
+  renderHolders();
+  if (document.body.dataset.page === "account") bootAccount();
+  else if (document.body.dataset.game) renderGame(document.body.dataset.game);
+}
 
-if (document.body.dataset.page === "account") bootAccount();
-else if (document.body.dataset.game) renderGame(document.body.dataset.game);
+startArcade();
